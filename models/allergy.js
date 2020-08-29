@@ -7,7 +7,7 @@ var allergySchema = Schema({
         Type: Boolean,
         default: true
     },
-    milk: {
+    dairy: {
         Type: Boolean,
         default: true
     },
