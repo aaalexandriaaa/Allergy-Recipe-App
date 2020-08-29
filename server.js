@@ -42,7 +42,7 @@ app.use(passport.session());
 
 // mount all routes with appropriate base paths
 app.use('/', usersRouter);
-app.use('/auth', authRouter)
+app.use('/auth', authRouter);
 
 // invalid request, send 404 page
 app.use(function (req, res) {
