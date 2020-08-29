@@ -1,0 +1,36 @@
+<%- include('../partials/header') %>
+<form action="/users/<%= user.id %>/allergies" method="POST">
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="gluten" id="defaultCheck1">
+        <label class="form-check-label" for="defaultCheck1">Gluten</label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="dairy" id="defaultCheck1">
+        <label class="form-check-label" for="defaultCheck1">Dairy</label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="eggs" id="defaultCheck1">
+        <label class="form-check-label" for="defaultCheck1">Eggs</label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="finFish" id="defaultCheck1">
+        <label class="form-check-label" for="defaultCheck1">Finned Fish</label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="shellFish" id="defaultCheck1">
+        <label class="form-check-label" for="defaultCheck1">Shellfish</label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="treeNuts" id="defaultCheck1">
+        <label class="form-check-label" for="defaultCheck1">Tree Nuts</label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="peanuts" id="defaultCheck1">
+        <label class="form-check-label" for="defaultCheck1">Peanuts</label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="soybeans" id="defaultCheck1">
+        <label class="form-check-label" for="defaultCheck1">Soy</label>
+    </div>
+</form>
+<%- include('../partials/footer') %>
