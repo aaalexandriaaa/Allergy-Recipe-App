@@ -1,33 +1,12 @@
-<!DOCTYPE html>
-<html>
+<%- include('../partials/header') %>
+<ul>Registered Users:
+  <% users.forEach(u => { %>
+  <li><%= u.name %></li>
+  <% }) %>
+</ul>
 
-<head>
-  <title>Users</title>
-  <link rel="stylesheet" href="stylesheets/style.css" />
-</head>
-
-<body>
-  <div class="navbar-fixed">
-    <nav>
-      <div class="nav-wrapper">
-        <a href="" class="brand-logo left">Users</a>
-        <ul class="right">
-          <li>
-          <% if (user) { %>
-            <a href="/auth/logout">Log Out</a>
-          <% } else { %>
-            <a href="/auth/google">Login with Google</a>
-          <% } %>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </div>
-  <ul>Registered Users:
-    <% users.forEach(u => { %>
-      <li><%= u.name %></li>
-    <% }) %>
-  </ul>
-</body>
-
-</html>
+<div class="container">
+  <img id="ble" src="https://cdn.pixabay.com/photo/2015/03/26/10/07/restaurant-690975_960_720.jpg"
+    alt="image of groups eating in a restaurant">
+</div>
+<%- include('../partials/footer') %>
