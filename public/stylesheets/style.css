@@ -18,3 +18,8 @@
   border-radius: 30px;
   margin: 15rem 0rem;
 }
+
+#avatarPhoto {
+  border-radius: 50%;
+  text-justify: right;
+}
