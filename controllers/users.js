@@ -1,4 +1,5 @@
 const User = require('../models/user');
+const Allergy = require('../models/allergy');
 
 module.exports = {
   index,
@@ -19,9 +20,14 @@ function index(req, res) {
 function showProfile(req, res) {
   User.findById(req.user._id)
     .then((user) => {
-      res.render('users/profile', {
-        title: 'Profile Page',
-        user
-      })
+      Allergy.findById(user.allergies)
+        .then(allergy => {
+          res.render('users/profile', {
+            title: 'Profile Page',
+            user,
+            allergy
+          })
+
+        })
     })
 }
