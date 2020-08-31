@@ -6,7 +6,7 @@
 
 ## ERD:
 
-![Drag Racing](Public/Unit2RecipeERD.png)
+![ERD](Public/Unit2RecipeERD.png)
 
 ## Wireframes:
 ![Login View](Public/LoginView.png)
