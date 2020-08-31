@@ -16,7 +16,8 @@
 ![SearchRecipeView](Public/SearchRecipeView.png)
 ![User Profile View](Public/UserProfileView.png)
 
-
+## Attributions
+![nav bar styling](https://www.codeply.com/go/0xSGj0EsAu)
 
 
 
