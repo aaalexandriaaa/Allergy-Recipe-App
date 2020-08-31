@@ -2,8 +2,8 @@ var router = require('express').Router();
 var allergiesCtrl = require('../controllers/allergies');
 
 // GET /users
-router.get('/users/:id/allergies/new', isLoggedIn, allergiesCtrl.index)
-router.post('/users/:id/allergies/new', isLoggedIn, allergiesCtrl.create);
+router.get('/users/allergies/new', isLoggedIn, allergiesCtrl.index)
+router.post('/users/allergies/new', isLoggedIn, allergiesCtrl.create);
 
 function isLoggedIn(req, res, next) {
     if (req.isAuthenticated()) return next();
