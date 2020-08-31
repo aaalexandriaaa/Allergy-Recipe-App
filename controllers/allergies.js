@@ -11,18 +11,31 @@ function create(req, res) {
     console.log("REQ.BODY", req.body)
     Allergy.create(req.body)
         .then(allergy => {
-            console.log("ALLERGY", allergy)
-            console.log("ALLERGY_ID", allergy._id)
-            User.findByIdAndUpdate(req.params.id, {
-                    allergies: [allergy._id]
-                }, {
-                    new: true
-                })
-                .then(() => {
-                    res.redirect('/users/profile')
-                })
+            if (!user.allergies) {
+                console.log("ALLERGY", allergy)
+                console.log("ALLERGY_ID", allergy._id)
+                User.findByIdAndUpdate(req.params.id, {
+                        allergies: [allergy._id]
+                    }, {
+                        new: true
+                    })
+                    .then(() => {
+                        res.redirect('/users/profile')
+                    })
+            } else {
+                console.log("ELSE")
+                console.log(req.body)
+                console.log(user.allergies)
+                Allergy.findByIdAndUpdate(user.allergies, req.body, {
+                        new: true
+                    })
+                    .then((allergy) => {
+                        res.redirect('/users/profile')
+                    })
+            }
         })
 }
+
 
 function index(req, res) {
     console.log("INDEX")

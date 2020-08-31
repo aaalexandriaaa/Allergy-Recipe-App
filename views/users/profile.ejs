@@ -1,23 +1,16 @@
 <%- include('../partials/header') %>
-
 <h3><%= title %></h3>
-
-
 <p><strong>user.name: </strong><%= user.name %> </p>
 <p><strong>user.email: </strong><%= user.email %> </p>
 <p><strong>user.allergies: </strong><%= user.allergies %> </p>
 <p><strong>allergy (do a ternary to only show true values): </strong><%= allergy %> </p>
 <p><strong>user: </strong><%= user %> </p>
 
+
 <section>
-    <form action="/users/:id/allergies/new"><input name="submit" type="submit" value="Edit Allergies"></form>
-    <!-- <a href="/allergies/new">Edit Allergies</a> -->
+    <form action="/users/:id/allergies/new"><button type=“submit”>Edit Allergies</button>
+    </form>
+
 
 </section>
-<br>
-
-<br>
-<br>
-<br><br>
-
 <%- include('../partials/footer') %>

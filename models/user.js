@@ -7,10 +7,10 @@ var userSchema = Schema({
   email: String,
   avatar: String,
   googleId: String,
-  allergies: [{
+  allergies: {
     type: Schema.Types.ObjectId,
     ref: 'Allergy'
-  }]
+  }
 }, {
   timestamps: true
 });
