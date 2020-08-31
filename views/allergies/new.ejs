@@ -1,36 +1,25 @@
 <%- include('../partials/header') %>
-<form action="/users/<%= user.id %>/allergies" method="POST">
+<h2>Add Allergies:</h2>
+<form action="/users/<%= user._id %>/allergies" method="POST" class='add-allergy-form'>
     <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="gluten" id="defaultCheck1">
-        <label class="form-check-label" for="defaultCheck1">Gluten</label>
-    </div>
-    <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="dairy" id="defaultCheck1">
-        <label class="form-check-label" for="defaultCheck1">Dairy</label>
-    </div>
-    <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="eggs" id="defaultCheck1">
-        <label class="form-check-label" for="defaultCheck1">Eggs</label>
-    </div>
-    <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="finFish" id="defaultCheck1">
-        <label class="form-check-label" for="defaultCheck1">Finned Fish</label>
-    </div>
-    <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="shellFish" id="defaultCheck1">
-        <label class="form-check-label" for="defaultCheck1">Shellfish</label>
-    </div>
-    <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="treeNuts" id="defaultCheck1">
-        <label class="form-check-label" for="defaultCheck1">Tree Nuts</label>
-    </div>
-    <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="peanuts" id="defaultCheck1">
-        <label class="form-check-label" for="defaultCheck1">Peanuts</label>
-    </div>
-    <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="soybeans" id="defaultCheck1">
-        <label class="form-check-label" for="defaultCheck1">Soy</label>
+        <!-- PASS IN ALLERGY INFORMATION & USE TERNARY FOR THE CHECKED BOXES -->
+        <input class="form-check-input" type="checkbox" id="defaultCheck1" name="gluten" checked>
+        <label class="form-check-label" for="defaultCheck1">Gluten</label><br>
+        <input class="form-check-input" type="checkbox" id="defaultCheck2" name="dairy" checked>
+        <label class="form-check-label" for="defaultCheck2">Dairy</label><br>
+        <input class="form-check-input" type="checkbox" id="defaultCheck3" name="eggs" checked>
+        <label class="form-check-label" for="defaultCheck3">Eggs</label><br>
+        <input class="form-check-input" type="checkbox" id="defaultCheck4" name="finFish" checked>
+        <label class="form-check-label" for="defaultCheck4">Finned Fish</label><br>
+        <input class="form-check-input" type="checkbox" id="defaultCheck5" name="shellfish" checked>
+        <label class="form-check-label" for="defaultCheck5">Shellfish</label><br>
+        <input class="form-check-input" type="checkbox" id="defaultCheck6" name="treeNuts" checked>
+        <label class="form-check-label" for="defaultCheck6">Tree Nuts</label><br>
+        <input class="form-check-input" type="checkbox" id="defaultCheck7" name="peanuts" checked>
+        <label class="form-check-label" for="defaultCheck7">Peanuts</label><br>
+        <input class="form-check-input" type="checkbox" id="defaultCheck8" name="soybeans" checked>
+        <label class="form-check-label" for="defaultCheck8">Soy</label><br>
+        <input name="submit" type="submit" value="Add Allergies">
     </div>
 </form>
 <%- include('../partials/footer') %>
