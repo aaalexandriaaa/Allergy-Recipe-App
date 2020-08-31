@@ -6,45 +6,40 @@
 <p><strong>user.name: </strong><%= user.name %> </p>
 <p><strong>user.email: </strong><%= user.email %> </p>
 <p><strong>user.allergies: </strong><%= user.allergies %> </p>
+<p><strong>allergy (do a ternary to only show true values): </strong><%= allergy %> </p>
 <p><strong>user: </strong><%= user %> </p>
 
 <section>
+    <input name="submit" type="submit" value="Edit Allergies">
+    <a href="/allergies/new">Edit Allergies</a>
     <h2>Add Allergies:</h2>
-    <form action="/users/<%= user._id %>/allergies" method="POST" id='add-allergy-user-form'>
-        <label>Allergies</label>
+    <form action="/users/<%= user._id %>/allergies" method="POST" class='add-allergy-form'>
         <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="gluten" id="defaultCheck1">
-            <label class="form-check-label" for="defaultCheck1">Gluten</label>
+            <!-- PASS IN ALLERGY INFORMATION & USE TERNARY FOR THE CHECKED BOXES -->
+            <input class="form-check-input" type="checkbox" id="defaultCheck1" name="gluten" checked>
+            <label class="form-check-label" for="defaultCheck1">Gluten</label><br>
+            <input class="form-check-input" type="checkbox" id="defaultCheck2" name="dairy" checked>
+            <label class="form-check-label" for="defaultCheck2">Dairy</label><br>
+            <input class="form-check-input" type="checkbox" id="defaultCheck3" name="eggs" checked>
+            <label class="form-check-label" for="defaultCheck3">Eggs</label><br>
+            <input class="form-check-input" type="checkbox" id="defaultCheck4" name="finFish" checked>
+            <label class="form-check-label" for="defaultCheck4">Finned Fish</label><br>
+            <input class="form-check-input" type="checkbox" id="defaultCheck5" name="shellfish" checked>
+            <label class="form-check-label" for="defaultCheck5">Shellfish</label><br>
+            <input class="form-check-input" type="checkbox" id="defaultCheck6" name="treeNuts" checked>
+            <label class="form-check-label" for="defaultCheck6">Tree Nuts</label><br>
+            <input class="form-check-input" type="checkbox" id="defaultCheck7" name="peanuts" checked>
+            <label class="form-check-label" for="defaultCheck7">Peanuts</label><br>
+            <input class="form-check-input" type="checkbox" id="defaultCheck8" name="soybeans" checked>
+            <label class="form-check-label" for="defaultCheck8">Soy</label><br>
+            <input name="submit" type="submit" value="Add Allergies">
         </div>
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="dairy" id="defaultCheck2">
-            <label class="form-check-label" for="defaultCheck2">Dairy</label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="eggs" id="defaultCheck3">
-            <label class="form-check-label" for="defaultCheck3">Eggs</label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="finFish" id="defaultCheck4">
-            <label class="form-check-label" for="defaultCheck4">Finned Fish</label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="shellFish" id="defaultCheck5">
-            <label class="form-check-label" for="defaultCheck5">Shellfish</label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="treeNuts" id="defaultCheck6">
-            <label class="form-check-label" for="defaultCheck6">Tree Nuts</label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="peanuts" id="defaultCheck7">
-            <label class="form-check-label" for="defaultCheck7">Peanuts</label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="soybeans" id="defaultCheck8">
-            <label class="form-check-label" for="defaultCheck8">Soy</label>
-        </div>
-        <input name="submit" type="submit" value="Add Allergies">
     </form>
 </section>
+<br>
+
+<br>
+<br>
+<br><br>
+
 <%- include('../partials/footer') %>
