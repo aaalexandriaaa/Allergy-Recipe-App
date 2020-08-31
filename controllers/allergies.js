@@ -3,7 +3,8 @@ const User = require('../models/user');
 
 
 module.exports = {
-    create
+    create,
+    index
 };
 
 function create(req, res) {
@@ -23,6 +24,21 @@ function create(req, res) {
         })
 }
 
+function index(req, res) {
+    console.log("INDEX")
+    User.findById(req.user._id)
+        .then((user) => {
+            Allergy.findById(user.allergies)
+                .then(allergy => {
+                    res.render('allergies/new', {
+                        title: 'Profile Page',
+                        user,
+                        allergy
+
+                    })
+                })
+        })
+}
 
 // CREATING A NEW ALLERGY DB ENTRY: 
 ////////////////////////////////////
