@@ -1,10 +1,10 @@
 const Allergy = require('../models/allergy');
 const User = require('../models/user');
-const user = require('../models/user');
 
 module.exports = {
     index,
-    create
+    create,
+    update
 };
 
 function index(req, res) {
@@ -34,7 +34,8 @@ function create(req, res) {
                 .then((user) => {
                     console.log(user)
                     user.allergies = allergy._id
-                    res.render('./users/profile', {
+                    user.save()
+                    res.render('users/profile', {
                         title: 'allergies',
                         allergy,
                         user
@@ -42,6 +43,48 @@ function create(req, res) {
                 })
         })
 }
+
+// function update(req, res) {
+//     User.findById(req.user._id)
+//         .then((user) => {
+//         Allergy.fineOneAndReplace(user.allergies)
+//     })
+// }
+
+
+function update(req, res) {
+    console.log("REQBODY", req.body)
+    User.findById(req.user._id)
+        .then((user) => {
+            Allergy.findById(user.allergies)
+                .then((allergy) => {
+                    // allergy.schema.eachPath(function (path) {
+                    //     console.log(path); //this gives me all keys in an object
+                    // })
+                    let bigAllergy = Object.keys(Allergy.schema.paths);
+                    let lilAllergy = Object.keys(allergy.schema.paths);
+                    console.log("BIG", bigAllergy)
+                    console.log("LIL", lilAllergy)
+                    // props.forEach((el, idx) => {
+                    //     for (i = 0; i < (props.length - 4); i++) {
+
+                    //     }
+                    // })
+
+
+
+
+                    // Allergy.findByIdAndUpdate(user.allergies, req.body, {
+                    //         new: true
+                    //     })
+                    //     .then((allergy) =>
+                    console.log(allergy._id);
+                })
+            res.redirect('/users/profile')
+        })
+}
+
+
 // User.findById(req.user._id)
 //     .then((user) => {
 //         Allergy.create(req.body)
