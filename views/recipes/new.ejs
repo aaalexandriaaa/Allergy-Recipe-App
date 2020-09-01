@@ -1,0 +1,37 @@
+<%- include('../partials/header') %>
+<form action="/recipes/new" method="POST">
+    <div class="form-group">
+        <label for="name">Recipe Name</label>
+        <input type="text" class="form-control" name="name" aria-describedby="recipeName" placeholder="Recipe Name">
+        <label for="imageUrl">Image URL</label>
+        <input type="text" class="form-control" name="imageUrl" aria-describedby="imageUrl"
+            placeholder="Enter Image URL">
+        <label for="recipeUrl">Image URL</label>
+        <input type="text" class="form-control" name="recipeUrl" aria-describedby="recipeUrl"
+            placeholder="Enter Recipe URL">
+        <label for="blogName">Blog Name</label>
+        <input type="text" class="form-control" name="blogName" aria-describedby="blogName" placeholder="Enter email">
+    </div>
+    <div class="form-check">
+        <!-- PASS IN ALLERGY INFORMATION & USE TERNARY FOR THE CHECKED BOXES -->
+        <input class="form-check-input" type="checkbox" id="defaultCheck1" name="gluten" value="true" checked>
+        <label class="form-check-label" for="defaultCheck1">Gluten</label><br>
+        <input class="form-check-input" type="checkbox" id="defaultCheck2" name="dairy" value="true">
+        <label class="form-check-label" for="defaultCheck2">Dairy</label><br>
+        <input class="form-check-input" type="checkbox" id="defaultCheck3" name="eggs" value="true">
+        <label class="form-check-label" for="defaultCheck3">Eggs</label><br>
+        <input class="form-check-input" type="checkbox" id="defaultCheck4" name="finFish" value="true">
+        <label class="form-check-label" for="defaultCheck4">Finned Fish</label><br>
+        <input class="form-check-input" type="checkbox" id="defaultCheck5" name="shellfish" value="true">
+        <label class="form-check-label" for="defaultCheck5">Shellfish</label><br>
+        <input class="form-check-input" type="checkbox" id="defaultCheck6" name="treeNuts" value="true">
+        <label class="form-check-label" for="defaultCheck6">Tree Nuts</label><br>
+        <input class="form-check-input" type="checkbox" id="defaultCheck7" name="peanuts" value="true">
+        <label class="form-check-label" for="defaultCheck7">Peanuts</label><br>
+        <input class="form-check-input" type="checkbox" id="defaultCheck8" name="soybeans" value="true">
+        <label class="form-check-label" for="defaultCheck8">Soy</label><br>
+    </div>
+    <button type="submit" class="btn btn-info">Submit</button>
+</form>
+
+<%- include('../partials/footer') %>
