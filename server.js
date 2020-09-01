@@ -21,6 +21,7 @@ require('./config/passport');
 const usersRouter = require('./routes/users');
 const authRouter = require('./routes/auth');
 const allergiesRouter = require('./routes/allergies');
+const recipesRouter = require('./routes/recipes');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -47,6 +48,7 @@ app.use(passport.session());
 app.use('/', usersRouter);
 app.use('/auth', authRouter);
 app.use('/', allergiesRouter);
+app.use('/', recipesRouter);
 
 // invalid request, send 404 page
 app.use(function (req, res) {
