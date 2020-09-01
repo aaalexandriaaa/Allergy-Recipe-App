@@ -4,6 +4,7 @@ var allergiesCtrl = require('../controllers/allergies');
 // GET /users
 router.get('/users/allergies/new', isLoggedIn, allergiesCtrl.index)
 router.post('/users/allergies/new', isLoggedIn, allergiesCtrl.create);
+router.put('/users/profile', isLoggedIn, allergiesCtrl.update);
 
 function isLoggedIn(req, res, next) {
     if (req.isAuthenticated()) return next();
