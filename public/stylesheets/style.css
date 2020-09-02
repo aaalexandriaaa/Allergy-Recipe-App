@@ -11,6 +11,10 @@
 }
 
 #container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 30px;
+  width: 100%;
   justify-content: center;
 }
 
@@ -21,9 +25,16 @@
 
 #avatarPhoto {
   border-radius: 50%;
-  text-justify: right;
+  /* text-justify: right; */
 }
 
 .recipeImage {
   border-radius: 15%;
+}
+
+.card {
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
 }

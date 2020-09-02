@@ -21,14 +21,18 @@ function index(req, res) {
 function showProfile(req, res) {
   User.findById(req.user._id)
     .then((user) => {
-      Allergy.findById(user.allergies)
-        .then(allergy => {
-          res.render('users/profile', {
-            title: 'Profile Page',
-            user,
-            allergy
-          })
+      Recipe.findById(user.recipes)
+        .then((recipe) => {
+          Allergy.findById(user.allergies)
+            .then(allergy => {
+              res.render('users/profile', {
+                title: 'Profile Page',
+                user,
+                allergy
+              })
 
+            })
         })
+
     })
 }
