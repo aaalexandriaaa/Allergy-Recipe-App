@@ -11,10 +11,11 @@ module.exports = {
 
 function index(req, res) {
     Recipe.find()
-        .then((recipe) => {
+        .then((recipes) => {
             res.render('recipes/search', {
                 title: "All Recipes",
-                user: req.user
+                user: req.user,
+                recipes: recipes.reverse()
             })
         })
 }
