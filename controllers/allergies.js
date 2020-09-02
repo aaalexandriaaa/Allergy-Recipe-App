@@ -1,5 +1,6 @@
 const Allergy = require('../models/allergy');
 const User = require('../models/user');
+const Recipe = require('../models/recipe')
 
 module.exports = {
     index,

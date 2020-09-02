@@ -12,8 +12,7 @@ var recipeSchema = Schema({
         type: String
     },
     blogName: {
-        type: Boolean,
-        default: false
+        type: String
     },
     allergies: {
         type: Schema.Types.ObjectId,
