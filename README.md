@@ -1,11 +1,12 @@
-# unit2project
+# Allergy Recipe App
 
+## Heroku Link:
+!(Allergy Recipe App)[allergy-recipe-app.heroku.com]
 
 ## User Stories:
 [Trello Link](https://trello.com/b/cPF2zOA0/unit-2-project)
 
 ## ERD:
-
 ![ERD](Public/Unit2RecipeERD.png)
 
 ## Wireframes:
@@ -17,8 +18,25 @@
 ![User Profile View](Public/UserProfileView.png)
 
 ## Attributions
-![nav bar styling](https://www.codeply.com/go/0xSGj0EsAu)
 
 
+## Screenshots
+![Landing Page](Public/LandingPage.png)
+![Search Page](Public/SearchPage.png)
+![Profile Page](Public/ProfilePage.png)
 
+## Technologies Used
+* NodeJS
+* HTML
+* CSS
+* Express
+* Express Generator
+* MongoDB
+* MongooseJS
+* MongoDB Atlas
+* EJS Templating
+* Heroku with NodeJS
+* Google OAuth 2.0
+* Passport JS
+* 
 
