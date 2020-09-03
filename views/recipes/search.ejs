@@ -37,9 +37,6 @@
         <div class="card-body">
             <h5 class="card-title"><%= r.name %></h5>
             <!-- <p class="card-text">this recipe is blah free</p> -->
-            <form action="/recipes/<%=r._id%>/update?_method=PUT" method="POST"><button class="btn btn-primary">Edit
-                    this
-                    Recipe</button></form>
             <a href="<%=r.recipeUrl%>" class="btn btn-primary" target="_blank">View this recipe at <%=r.blogName%> </a>
         </div>
     </div>

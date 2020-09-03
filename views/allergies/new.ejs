@@ -2,17 +2,14 @@
 
 <p>Allergy Information</p>
 <p>User: <%= user%></p>
-<p>Allergy: <%=allergy%></p>
-<p>Allergy Paths: <%=allergy.schema.paths%></p>
+
 <h2>Add Allergies:</h2>
 <form action="/users/profile?_method=PUT" method="POST">
     <!-- KEEP THIS CODE. IT'S FOR ADDING NEW ALLERGIES <form action="/users/allergies/new" method="POST"> -->
     <div class="form-check">
         <!-- PASS IN ALLERGY INFORMATION & USE TERNARY FOR THE CHECKED BOXES -->
         <input class="form-check-input" type="checkbox" id="defaultCheck1" name="gluten" value="true" checked>
-        <label class="form-check-label" for="defaultCheck1">
-            <Gluten>
-        </label><br>
+        <label class="form-check-label" for="defaultCheck1">Gluten</label><br>
         <input class="form-check-input" type="checkbox" id="defaultCheck2" name="dairy" value="true">
         <label class="form-check-label" for="defaultCheck2">Dairy</label><br>
         <input class="form-check-input" type="checkbox" id="defaultCheck3" name="eggs" value="true">
