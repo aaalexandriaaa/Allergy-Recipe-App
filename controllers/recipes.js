@@ -6,7 +6,9 @@ const user = require('../models/user');
 module.exports = {
     index,
     new: newRecipe,
-    create
+    create,
+    search,
+    update
 };
 
 function index(req, res) {
@@ -33,9 +35,11 @@ function create(req, res) {
             console.log("ALLERGY", allergy)
             req.body.allergies = allergy._id
             console.log("REQBODY", req.body)
+            req.body.user = req.user._id
+            console.log("REQBODY", req.body)
             Recipe.create(req.body)
                 .then((recipe) => {
-                    console.log(recipe)
+                    console.log("RECIPE", recipe)
                     //res.redirect('/recipes')
                     res.render('recipes/showNewRecipe', {
                         title: recipe.name,
@@ -48,6 +52,29 @@ function create(req, res) {
                 })
         })
 }
+
+function search(req, res) {
+    console.log(req.body)
+    Allergy.find({
+            $or: [req.body]
+        })
+        .then((allergyID) => {
+            console.log(allergyID)
+            Recipe.find({
+                    allergies: allergyID
+                })
+                .then((recipes) => {
+                    res.render('recipes/search', {
+                        title: 'Recipe Search',
+                        recipes,
+                        allergies: allergyID,
+                        user: req.user._id
+                    })
+
+                })
+        })
+}
+
 function update(req, res) {
     console.log(req.params.id)
     Recipe.findById(req.params.id)
