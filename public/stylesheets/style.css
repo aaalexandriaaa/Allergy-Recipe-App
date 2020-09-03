@@ -33,8 +33,27 @@
 }
 
 .card {
-  width: 95%;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
   margin-top: 30px;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-column-gap: 1px;
+}
+
+.profile-padding {
+  margin: 25px 25px 0px 25px;
+}
+
+.profile-padding-no-top {
+  margin: 0px 55px;
+}
+
+
+#addEditAllergies {
+  color: black;
 }
