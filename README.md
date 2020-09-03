@@ -1,13 +1,13 @@
 # Allergy Recipe App
 
 ## Heroku Link:
-![Allergy Recipe App](allergy-recipe-app.heroku.com)
+[Allergy Recipe App](allergy-recipe-app.heroku.com)
 
 ## Trello Link - including User Stories:
 [Trello Link](https://trello.com/b/cPF2zOA0/unit-2-project)
 
 ## ERD:
-![ERD](Public/Unit2RecipeERD.png)
+[ERD](Public/Unit2RecipeERD.png)
 
 ## Wireframes:
 Login View<br>
