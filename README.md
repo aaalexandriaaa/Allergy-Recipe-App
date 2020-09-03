@@ -10,16 +10,16 @@
 ![ERD](Public/Unit2RecipeERD.png)
 
 ## Wireframes:
-![Login View](Public/LoginView.png)
-![User Index View](Public/UserIndexView.png)
-![Add Recipe View](Public/AddRecipeView.png)
-![Add Recipe Confirmation View](Public/AddRecipeConfirmationView.png)
-![SearchRecipeView](Public/SearchRecipeView.png)
+![Login View](Public/LoginView.png)<br>
+![User Index View](Public/UserIndexView.png)<br>
+![Add Recipe View](Public/AddRecipeView.png)<br>
+![Add Recipe Confirmation View](Public/AddRecipeConfirmationView.png)<br>
+![SearchRecipeView](Public/SearchRecipeView.png)<br>
 ![User Profile View](Public/UserProfileView.png)
 
 ## Screenshots
-![Landing Page](Public/LandingPage.png)
-![Search Page](Public/SearchPage.png)
+![Landing Page](Public/LandingPage.png)<br>
+![Search Page](Public/SearchPage.png)<br>
 ![Profile Page](Public/ProfilePage.png)
 
 ## Technologies Used
