@@ -8,8 +8,10 @@ module.exports = {
     new: newRecipe,
     create,
     search,
-    update
-};
+    update,
+    removeRecipe,
+    show
+}
 
 function index(req, res) {
     Recipe.find()
@@ -40,15 +42,13 @@ function create(req, res) {
             Recipe.create(req.body)
                 .then((recipe) => {
                     console.log("RECIPE", recipe)
-                    //res.redirect('/recipes')
-                    res.render('recipes/update', {
-                        title: recipe.name,
-                        user: req.user,
-                        recipe,
-                        allergy
-
-
-                    })
+                    res.redirect(`/recipes/${recipe._id}/update`)
+                    // res.render('recipes/update', {
+                    //     title: recipe.name,
+                    //     user: req.user,
+                    //     recipe,
+                    //     allergy
+                    // })
                 })
         })
 }
@@ -75,14 +75,14 @@ function search(req, res) {
         })
 }
 
-function update(req, res) {
+function show(req, res) {
     console.log(req.params.id)
     Recipe.findById(req.params.id)
         .then((recipe) => {
             User.findById(recipe.user)
                 .then((user) => {
                     res.render('recipes/update', {
-                        title: "Recipe Update",
+                        title: recipe.name,
                         user,
                         recipe
 
@@ -90,9 +90,18 @@ function update(req, res) {
                 })
 
         })
+}
 
-    // Recipe.findById(req.body.)
-    // res.render('recipes/update', {
-    //     title: `
-    // })
+function removeRecipe(req, res) {
+    console.log(req.params.id)
+    Recipe.findByIdAndDelete({
+            _id: req.params.id
+        })
+        .then(
+            res.redirect('/users/profile')
+        )
+}
+
+function update(req, res) {
+    console.log("UPDATIN")
 }

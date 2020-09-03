@@ -1,31 +1,41 @@
 <%- include('../partials/header') %>
 
-<p>Allergy Information</p>
-<p>User: <%= user%></p>
 
-<h2>Add Allergies:</h2>
+<% if (user.allergies) { %>
+<h2>Edit Allergies:</h2>
 <form action="/users/profile?_method=PUT" method="POST">
-    <!-- KEEP THIS CODE. IT'S FOR ADDING NEW ALLERGIES <form action="/users/allergies/new" method="POST"> -->
+    <% } else {%>
+    <h2>Add Allergies:</h2>
+    <form action="/users/allergies/new" method="POST"></form>
+    <% } %>
     <div class="form-check">
-        <!-- PASS IN ALLERGY INFORMATION & USE TERNARY FOR THE CHECKED BOXES -->
-        <input class="form-check-input" type="checkbox" id="defaultCheck1" name="gluten" value="true" checked>
+        <!-- <input type='hidden' value='false' name='gluten'> -->
+        <input class="form-check-input" type="checkbox" id="defaultCheck1" name="gluten" value="true"
+            <%= allergies.gluten? 'checked' : '' %>>
         <label class="form-check-label" for="defaultCheck1">Gluten</label><br>
-        <input class="form-check-input" type="checkbox" id="defaultCheck2" name="dairy" value="true">
+
+        <input class="form-check-input" type="checkbox" id="defaultCheck2" name="dairy" value="true"
+            <%= allergies.dairy? 'checked' : '' %>>
         <label class="form-check-label" for="defaultCheck2">Dairy</label><br>
-        <input class="form-check-input" type="checkbox" id="defaultCheck3" name="eggs" value="true">
+        <input class="form-check-input" type="checkbox" id="defaultCheck3" name="eggs" value="true"
+            <%= allergies.eggs? 'checked' : '' %>>
         <label class="form-check-label" for="defaultCheck3">Eggs</label><br>
-        <input class="form-check-input" type="checkbox" id="defaultCheck4" name="finFish" value="true">
+        <input class="form-check-input" type="checkbox" id="defaultCheck4" name="finFish" value="true"
+            <%= allergies.finFish? 'checked' : '' %>>
         <label class="form-check-label" for="defaultCheck4">Finned Fish</label><br>
-        <input class="form-check-input" type="checkbox" id="defaultCheck5" name="shellfish" value="true">
+        <input class="form-check-input" type="checkbox" id="defaultCheck5" name="shellfish" value="true"
+            <%= allergies.shellfish? 'checked' : '' %>>
         <label class="form-check-label" for="defaultCheck5">Shellfish</label><br>
-        <input class="form-check-input" type="checkbox" id="defaultCheck6" name="treeNuts" value="true">
+        <input class="form-check-input" type="checkbox" id="defaultCheck6" name="treeNuts" value="true"
+            <%= allergies.treeNuts? 'checked' : '' %>>
         <label class="form-check-label" for="defaultCheck6">Tree Nuts</label><br>
-        <input class="form-check-input" type="checkbox" id="defaultCheck7" name="peanuts" value="true">
+        <input class="form-check-input" type="checkbox" id="defaultCheck7" name="peanuts" value="true"
+            <%= allergies.peanuts? 'checked' : '' %>>
         <label class="form-check-label" for="defaultCheck7">Peanuts</label><br>
-        <input class="form-check-input" type="checkbox" id="defaultCheck8" name="soybeans" value="true">
+        <input class="form-check-input" type="checkbox" id="defaultCheck8" name="soybeans" value="true"
+            <%= allergies.soybeans? 'checked' : '' %>>
         <label class="form-check-label" for="defaultCheck8">Soy</label><br>
     </div>
-    <!-- <button type="submit">Submit</button> -->
-    <button type="submit" class="btn btn-warning">Update</button>
+    <button type="submit" class="btn btn-warning"><%= user.allergies? "Update":"Add New"%></button>
 </form>
 <%- include('../partials/footer') %>

@@ -8,6 +8,8 @@ router.get('/recipes/new', isLoggedIn, recipesCtrl.new)
 router.post('/recipes/new', isLoggedIn, recipesCtrl.create)
 router.post('/recipes/search', isLoggedIn, recipesCtrl.search)
 router.put('/recipes/:id/update', isLoggedIn, recipesCtrl.update)
+router.delete('/recipes/:id', isLoggedIn, recipesCtrl.removeRecipe)
+router.get('/recipes/:id/update', isLoggedIn, recipesCtrl.show)
 
 
 //router.get('/users/profile', isLoggedIn, usersCtrl.showProfile);

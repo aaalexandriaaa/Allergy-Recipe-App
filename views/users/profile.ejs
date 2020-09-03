@@ -53,11 +53,60 @@
         <img class=" card-img-top" src="<%=r.imageUrl%>" alt="<%=r.recipeName%> image">
         <div class="card-body">
             <h5 class="card-title"><%= r.name %></h5>
-            <!-- <p class="card-text">this recipe is <%= include('../partials/allergyLogic') %> free</p> -->
-            <form action="/recipes/<%=r._id%>/update?_method=PUT" method="POST"><button class="btn btn-primary">Edit
+            <p class="card-text">This recipe is free from
+
+
+
+
+
+
+
+                <% for (i=0; i<(allergyArray.length-4); i++){ %>
+                <% if (allergyObject[r.allergies][allergyArray[i]] === true) {%>
+                <li>
+                    <%if (allergyArray[i] === "gluten") {%> <%="Gluten"%> <% } %>
+                    <%if (allergyArray[i] === "dairy") {%> <%="Dairy"%> <% } %>
+                    <%if (allergyArray[i] === "eggs") {%> <%="Eggs"%> <% } %>
+                    <%if (allergyArray[i] === "finFish") {%> <%="Fin Fish"%> <% } %>
+                    <%if (allergyArray[i] === "shellfish") {%> <%="Shellfish"%> <% } %>
+                    <%if (allergyArray[i] === "treeNuts") {%> <%="Tree Nuts"%> <% } %>
+                    <%if (allergyArray[i] === "peanuts") {%> <%="Peanuts"%> <% } %>
+                    <%if (allergyArray[i] === "soybeans") {%> <%="Soybeans"%> <% } %>
+                </li>
+                <% } %>
+                <% } %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </p>
+
+            <a href="/recipes/<%=r._id%>/update" class="btn btn-primary" target="_blank">Edit
+                this Recipe</a>
+
+            <a href="<%=r.recipeUrl%>" class="btn btn-primary" target="_blank">View this recipe at <%=r.blogName%> </a>
+            <form action="/recipes/<%=r._id%>?_method=DELETE" method="POST"><button class="btn btn-primary">Delete
                     this
                     Recipe</button></form>
-            <a href="<%=r.recipeUrl%>" class="btn btn-primary" target="_blank">View this recipe at <%=r.blogName%> </a>
         </div>
     </div>
 

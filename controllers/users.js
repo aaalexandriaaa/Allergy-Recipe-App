@@ -21,19 +21,27 @@ function index(req, res) {
 function showProfile(req, res) {
   User.findById(req.user._id)
     .then((user) => {
+
       Recipe.find({
           user: req.user._id
         })
-        .then((recipes) => {
+        .then(async(recipes) => {
+
+          let allergyObject = {};
+          for (i = 0; i < recipes.length; i++) {
+            let boop = await Allergy.findById(recipes[i].allergies).exec()
+            allergyObject[recipes[i].allergies] = boop
+          }
+
           Allergy.findById(user.allergies)
             .then(allergies => {
-              // allergies = allergies ? allergies : []
               res.render('users/profile', {
                 title: `Welcome, ${user.name.split(" ")[0]}!`,
                 user,
                 allergies: allergies ? allergies : [],
-                recipes,
-                allergyArray: Object.keys(Allergy.schema.paths)
+                recipes: recipes.reverse(),
+                allergyArray: Object.keys(Allergy.schema.paths), 
+                allergyObject
               })
             })
         })

@@ -15,7 +15,7 @@ function index(req, res) {
             Allergy.findById(user.allergies)
                 .then(allergies => {
                     res.render('allergies/new', {
-                        title: 'Profile Page',
+                        title: 'Add/Edit Allergies',
                         user,
                         allergies,
                         allergyArray: Object.keys(Allergy.schema.paths)
@@ -42,13 +42,14 @@ function update(req, res) {
         .then((user) => {
             Allergy.findById(user.allergies)
                 .then((allergy) => {
-                    // Allergy.findByIdAndUpdate(user.allergies, req.body, {
-                    //         new: true
-                    //     })
-                    //     .then((allergy) =>
-                    console.log(allergy._id);
+                    req.body = !!req.body
+                    Allergy.findByIdAndUpdate(user.allergies, req.body, {
+                            new: true
+                        })
+                        .then((allergy) => {
+                            res.redirect('/users/profile')
+                        })
                 })
-            res.redirect('/users/profile')
         })
 }
 
