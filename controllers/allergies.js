@@ -54,7 +54,7 @@ function create(req, res) {
 
 
 function update(req, res) {
-    console.log("REQBODY", req.body)
+    // console.log("REQBODY", req.body)
     User.findById(req.user._id)
         .then((user) => {
             Allergy.findById(user.allergies)
