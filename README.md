@@ -3,8 +3,7 @@
 ## Heroku Link:
 ![Allergy Recipe App](allergy-recipe-app.heroku.com)
 
-## Trello Link:
-### including User Stories
+## Trello Link - including User Stories:
 [Trello Link](https://trello.com/b/cPF2zOA0/unit-2-project)
 
 ## ERD:
