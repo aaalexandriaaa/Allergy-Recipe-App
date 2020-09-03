@@ -18,6 +18,10 @@
     <p class="profile-padding"><%=allergyArray.length%></p>
     <p class="profile-padding">allergies.gluten</p>
     <p class="profile-padding"><%=allergies.gluten%></p> -->
+
+    <% if (!user.allergies){ %>
+    <p><%-'There are no allergies associated with this account'%></p>
+    <%} else {%>
     <% for (i=0; i<(allergyArray.length-4); i++){ %>
     <% if (allergies[allergyArray[i]] === true) {%>
     <li>
@@ -32,12 +36,13 @@
     </li>
     <% } %>
     <% } %>
+    <% } %>
 </div>
 <div>
     <section class="profile-padding">
         <%=user.allergies?'yes, there are allergies associated with this user':'no'%></br>
-        <a href="/users/allergies/new" id="addEditAllergies" class="badge badge-info profile-padding-no-top"
-            style="font-size:larger">Edit/Add Allergies</a>
+        <a href="/users/allergies/new" class="badge badge-info profile-padding-no-top"
+            style="font-size:larger"><%-user.allergies?'Edit Allergies': 'Add Allergies'%></a>
     </section>
 </div>
 
@@ -50,6 +55,9 @@
         <div class="card-body">
             <h5 class="card-title"><%= r.name %></h5>
             <!-- <p class="card-text">this recipe is <%= include('../partials/allergyLogic') %> free</p> -->
+            <form action="/recipes/<%=r._id%>/update?_method=PUT" method="POST"><button class="btn btn-primary">Edit
+                    this
+                    Recipe</button></form>
             <a href="<%=r.recipeUrl%>" class="btn btn-primary" target="_blank">View this recipe at <%=r.blogName%> </a>
         </div>
     </div>
