@@ -1,9 +1,10 @@
 # Allergy Recipe App
 
 ## Heroku Link:
-!(Allergy Recipe App)[allergy-recipe-app.heroku.com]
+![Allergy Recipe App](allergy-recipe-app.heroku.com)
 
-## User Stories:
+## Trello Link:
+### including User Stories
 [Trello Link](https://trello.com/b/cPF2zOA0/unit-2-project)
 
 ## ERD:
@@ -16,9 +17,6 @@
 ![Add Recipe Confirmation View](Public/AddRecipeConfirmationView.png)
 ![SearchRecipeView](Public/SearchRecipeView.png)
 ![User Profile View](Public/UserProfileView.png)
-
-## Attributions
-
 
 ## Screenshots
 ![Landing Page](Public/LandingPage.png)
@@ -38,5 +36,7 @@
 * Heroku with NodeJS
 * Google OAuth 2.0
 * Passport JS
-* 
-
+  
+## Next Steps
+* I plan to flesh out the allergy schema a bit. I hope to create a dynamic schema that can be updated by any user of the app. 
+* I plan to implement a "Friend" functionality, so that you can search for recipes that match your friends' dietary needs. 
