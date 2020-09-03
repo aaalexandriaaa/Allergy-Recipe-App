@@ -17,6 +17,10 @@ var recipeSchema = Schema({
     allergies: {
         type: Schema.Types.ObjectId,
         ref: 'Allergy'
+    },
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: 'Allergy'
     }
 }, {
     timestamps: true
