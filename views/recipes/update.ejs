@@ -1,0 +1,16 @@
+a<%- include('../partials/header') %>
+
+<p>hello it's updatin' time</p>
+<%= recipe%>
+<%= user%>
+
+
+<p>thanks for saving <%= recipe.name %></p>
+
+<p>add update allergy button here</p>
+
+<h1><%=recipe.name%></h1>
+<h2><%=recipe.blogName%></h2>
+<img class="recipeImage" src="<%=recipe.imageUrl%>" alt="recipe image">
+
+<%- include('../partials/footer') %>

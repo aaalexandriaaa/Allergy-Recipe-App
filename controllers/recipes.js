@@ -48,3 +48,24 @@ function create(req, res) {
                 })
         })
 }
+function update(req, res) {
+    console.log(req.params.id)
+    Recipe.findById(req.params.id)
+        .then((recipe) => {
+            User.findById(recipe.user)
+                .then((user) => {
+                    res.render('recipes/update', {
+                        title: "Recipe Update",
+                        user,
+                        recipe
+
+                    })
+                })
+
+        })
+
+    // Recipe.findById(req.body.)
+    // res.render('recipes/update', {
+    //     title: `
+    // })
+}
