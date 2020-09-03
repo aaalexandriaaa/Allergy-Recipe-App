@@ -1,0 +1,14 @@
+<% for (i=0; i<(allergyArray.length-4); i++){ %>
+<% if (recipes[allergyArray[i]] === true) {%>
+
+<%if (allergyArray[i] === "gluten") {%> <%="Gluten"%> <% } %>
+<%if (allergyArray[i] === "dairy") {%> <%="Dairy"%> <% } %>
+<%if (allergyArray[i] === "eggs") {%> <%="Eggs"%> <% } %>
+<%if (allergyArray[i] === "finFish") {%> <%="Fin Fish"%> <% } %>
+<%if (allergyArray[i] === "shellfish") {%> <%="Shellfish"%> <% } %>
+<%if (allergyArray[i] === "treeNuts") {%> <%="Tree Nuts"%> <% } %>
+<%if (allergyArray[i] === "peanuts") {%> <%="Peanuts"%> <% } %>
+<%if (allergyArray[i] === "soybeans") {%> <%="Soybeans"%> <% } %>
+
+<% } %>
+<% } %>
