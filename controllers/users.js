@@ -21,18 +21,21 @@ function index(req, res) {
 function showProfile(req, res) {
   User.findById(req.user._id)
     .then((user) => {
-      Recipe.findById(user.recipes)
-        .then((recipe) => {
+      Recipe.find({
+          user: req.user._id
+        })
+        .then((recipes) => {
           Allergy.findById(user.allergies)
-            .then(allergy => {
+            .then(allergies => {
+              console.log("ALLERGIES", allergies)
               res.render('users/profile', {
-                title: 'Profile Page',
+                title: `Welcome, ${user.name.split(" ")[0]}!`,
                 user,
-                allergy
+                allergies,
+                recipes,
+                allergyArray: Object.keys(Allergy.schema.paths)
               })
-
             })
         })
-
     })
 }
