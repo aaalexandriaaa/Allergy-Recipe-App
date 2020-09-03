@@ -41,7 +41,7 @@ function create(req, res) {
                 .then((recipe) => {
                     console.log("RECIPE", recipe)
                     //res.redirect('/recipes')
-                    res.render('recipes/showNewRecipe', {
+                    res.render('recipes/update', {
                         title: recipe.name,
                         user: req.user,
                         recipe,
