@@ -10,17 +10,26 @@
 ![ERD](Public/Unit2RecipeERD.png)
 
 ## Wireframes:
-![Login View](Public/LoginView.png)<br>
-![User Index View](Public/UserIndexView.png)<br>
-![Add Recipe View](Public/AddRecipeView.png)<br>
-![Add Recipe Confirmation View](Public/AddRecipeConfirmationView.png)<br>
-![SearchRecipeView](Public/SearchRecipeView.png)<br>
-![User Profile View](Public/UserProfileView.png)
+Login View<br>
+![Login View](Public/images/LoginView.png)<br>
+User Index View<br>
+![User Index View](Public/images/UserIndexView.png)<br>
+Add Recipe View<br>
+![Add Recipe View](Public/images/AddRecipeView.png)<br>
+Add Recipe Confirmation View<br>
+![Add Recipe Confirmation View](Public/images/AddRecipeConfirmationView.png)<br>
+Search Recipe View<br>
+![SearchRecipeView](Public/images/SearchRecipeView.png)<br>
+User Profile View<br>
+![User Profile View](Public/images/UserProfileView.png)
 
 ## Screenshots
-![Landing Page](Public/LandingPage.png)<br>
-![Search Page](Public/SearchPage.png)<br>
-![Profile Page](Public/ProfilePage.png)
+Landing Page<br>
+![Landing Page](Public/images/LandingPage.png)<br>
+Search Page<br>
+![Search Page](Public/images/SearchPage.png)<br>
+Profile Page<br>
+![Profile Page](Public/images/ProfilePage.png)
 
 ## Technologies Used
 * NodeJS
