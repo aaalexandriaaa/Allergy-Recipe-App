@@ -27,11 +27,11 @@ function showProfile(req, res) {
         .then((recipes) => {
           Allergy.findById(user.allergies)
             .then(allergies => {
-              console.log("ALLERGIES", allergies)
+              // allergies = allergies ? allergies : []
               res.render('users/profile', {
                 title: `Welcome, ${user.name.split(" ")[0]}!`,
                 user,
-                allergies,
+                allergies: allergies ? allergies : [],
                 recipes,
                 allergyArray: Object.keys(Allergy.schema.paths)
               })
