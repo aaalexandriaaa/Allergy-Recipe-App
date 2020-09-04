@@ -25,7 +25,7 @@ function showProfile(req, res) {
       Recipe.find({
           user: req.user._id
         })
-        .then(async(recipes) => {
+        .then(async (recipes) => {
 
           let allergyObject = {};
           for (i = 0; i < recipes.length; i++) {
@@ -40,7 +40,7 @@ function showProfile(req, res) {
                 user,
                 allergies: allergies ? allergies : [],
                 recipes: recipes.reverse(),
-                allergyArray: Object.keys(Allergy.schema.paths), 
+                allergyArray: Object.keys(Allergy.schema.paths),
                 allergyObject
               })
             })

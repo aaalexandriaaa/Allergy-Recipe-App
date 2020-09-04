@@ -4,21 +4,6 @@
 
 <h4 class="profile-padding">Your Allergies:</h4>
 <div class="profile-padding-no-top">
-    <!-- <p class="profile-padding">view your allergies</p>
-    <p class="profile-padding"><%=allergies%></p>
-    <p class="profile-padding">view your Object.entries(obj)</p>
-    <p class="profile-padding"><%=Object.entries(allergies)%></p>
-    <p class="profile-padding">view allergy array</p>
-    <p class="profile-padding"><%=allergyArray%></p>
-    <p class="profile-padding">second allergy</p>
-    <p class="profile-padding"><%=allergyArray[1]%></p>
-    <p class="profile-padding">typeof</p>
-    <p class="profile-padding"><%=typeof(allergyArray)%></p>
-    <p class="profile-padding">length</p>
-    <p class="profile-padding"><%=allergyArray.length%></p>
-    <p class="profile-padding">allergies.gluten</p>
-    <p class="profile-padding"><%=allergies.gluten%></p> -->
-
     <% if (!user.allergies){ %>
     <p><%-'There are no allergies associated with this account'%></p>
     <%} else {%>
@@ -44,7 +29,6 @@
             style="font-size:larger"><%-user.allergies?'Edit Allergies': 'Add Allergies'%></a>
     </section>
 </div>
-
 <h5 class="profile-padding">Recipes You've Added:</h5>
 <div class='wrapper'>
     <% if (recipes.length) {%>
@@ -53,14 +37,7 @@
         <img class=" card-img-top" src="<%=r.imageUrl%>" alt="<%=r.recipeName%> image">
         <div class="card-body">
             <h5 class="card-title"><%= r.name %></h5>
-            <p class="card-text">This recipe is free from
-
-
-
-
-
-
-
+            <p class="card-text">This recipe is free from:
                 <% for (i=0; i<(allergyArray.length-4); i++){ %>
                 <% if (allergyObject[r.allergies][allergyArray[i]] === true) {%>
                 <li>
@@ -75,45 +52,18 @@
                 </li>
                 <% } %>
                 <% } %>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             </p>
-
-            <a href="/recipes/<%=r._id%>/update" class="btn btn-primary">Edit
+            <a href="<%=r.recipeUrl%>" class="btn btn-info" target="_blank">View this recipe at <%=r.blogName%> </a>
+            <a href="/recipes/<%=r._id%>/update" class="btn btn-info">Edit
                 this Recipe</a>
-
-            <a href="<%=r.recipeUrl%>" class="btn btn-primary" target="_blank">View this recipe at <%=r.blogName%> </a>
-            <form action="/recipes/<%=r._id%>?_method=DELETE" method="POST"><button class="btn btn-primary">Delete
+            <form action="/recipes/<%=r._id%>?_method=DELETE" method="POST"><button class="btn btn-info">Delete
                     this
                     Recipe</button></form>
         </div>
     </div>
-
     <% }); %>
     <% } else { %>
     <h5 class="profile-padding">You haven't added any recipes yet! </h5>
     <% } %>
 </div>
-
 <%- include('../partials/footer') %>

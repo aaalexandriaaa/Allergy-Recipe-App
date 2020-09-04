@@ -2,7 +2,7 @@ var router = require('express').Router();
 var recipesCtrl = require('../controllers/recipes');
 const recipe = require('../models/recipe');
 
-// GET /users
+
 router.get('/recipes/search', isLoggedIn, recipesCtrl.index);
 router.post('/recipes/search', isLoggedIn, recipesCtrl.search)
 router.get('/recipes/new', isLoggedIn, recipesCtrl.new)
