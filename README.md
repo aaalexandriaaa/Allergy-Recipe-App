@@ -7,29 +7,29 @@
 [Trello Link](https://trello.com/b/cPF2zOA0/unit-2-project)
 
 ## ERD:
-[ERD](Public/Unit2RecipeERD.png)
+[ERD](public/Unit2RecipeERD.png)
 
 ## Wireframes:
 Login View<br>
-![Login View](Public/images/LoginView.png)<br>
+![Login View](public/images/LoginView.png)<br>
 User Index View<br>
-![User Index View](Public/images/UserIndexView.png)<br>
+![User Index View](public/images/UserIndexView.png)<br>
 Add Recipe View<br>
-![Add Recipe View](Public/images/AddRecipeView.png)<br>
+![Add Recipe View](public/images/AddRecipeView.png)<br>
 Add Recipe Confirmation View<br>
-![Add Recipe Confirmation View](Public/images/AddRecipeConfirmationView.png)<br>
+![Add Recipe Confirmation View](public/images/AddRecipeConfirmationView.png)<br>
 Search Recipe View<br>
-![SearchRecipeView](Public/images/SearchRecipeView.png)<br>
+![SearchRecipeView](public/images/SearchRecipeView.png)<br>
 User Profile View<br>
-![User Profile View](Public/images/UserProfileView.png)
+![User Profile View](public/images/UserProfileView.png)
 
 ## Screenshots
 Landing Page<br>
-![Landing Page](Public/images/LandingPage.png)<br>
+![Landing Page](public/images/LandingPage.png)<br>
 Search Page<br>
-![Search Page](Public/images/SearchPage.png)<br>
+![Search Page](public/images/SearchPage.png)<br>
 Profile Page<br>
-![Profile Page](Public/images/ProfilePage.png)
+![Profile Page](public/images/ProfilePage.png)
 
 ## Technologies Used
 * NodeJS
