@@ -10,7 +10,7 @@
   - [7. Next Steps](#7-next-steps)
 
 ## 1. Heroku Link:
-[Allergy Recipe App](allergy-recipe-app.heroku.com)
+[allergy-recipe-app.heroku.com](https://allergy-recipe-app.herokuapp.com/))
 
 ## 2. Trello Link - including User Stories:
 [Trello Link](https://trello.com/b/cPF2zOA0/unit-2-project)
