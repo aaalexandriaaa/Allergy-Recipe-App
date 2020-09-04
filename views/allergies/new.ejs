@@ -2,39 +2,54 @@
 
 
 <% if (user.allergies) { %>
-<h2>Edit Allergies:</h2>
-<form action="/users/profile?_method=PUT" method="POST">
+<h2 class="profile-padding">Edit Allergies:</h2>
+<form action="/users/profile?_method=PUT" method="POST" class="profile-padding">
     <% } else {%>
     <h2>Add Allergies:</h2>
     <form action="/users/allergies/new" method="POST"></form>
     <% } %>
     <div class="form-check">
-        <!-- <input type='hidden' value='false' name='gluten'> -->
-        <input class="form-check-input" type="checkbox" id="defaultCheck1" name="gluten" value="true"
-            <%= allergies.gluten? 'checked' : '' %>>
-        <label class="form-check-label" for="defaultCheck1">Gluten</label><br>
+        <label for="gluten">Gluten free? </label>
+        <input type="radio" id="gluten" name="gluten" value="yes" <%= allergies.gluten? 'checked' : '' %>>
+        <label for="gluten">yes</label>
+        <input type="radio" id="gluten" name="gluten" value="false">
+        <label for="gluten">no</label><br>
+        <label for="dairy">Dairy free? </label>
+        <input type="radio" id="dairy" name="dairy" value="yes" <%= allergies.dairy? 'checked' : '' %>>
+        <label for="dairy">yes</label>
+        <input type="radio" id="dairy" name="dairy" value="false">
+        <label for="dairy">no</label><br>
+        <label for="eggs">Egg free? </label>
+        <input type="radio" id="eggs" name="eggs" value="yes" <%= allergies.eggs? 'checked' : '' %>>
+        <label for="eggs">yes</label>
+        <input type="radio" id="eggs" name="eggs" value="false">
+        <label for="eggs">no</label><br>
+        <label for="finFish">Fin Fish free? </label>
+        <input type="radio" id="finFish" name="finFish" value="yes" <%= allergies.finFish? 'checked' : '' %>>
+        <label for="finFish">yes</label>
+        <input type="radio" id="finFish" name="finFish" value="false">
+        <label for="finFish">no</label><br>
+        <label for="shellfish">Shellfish free? </label>
+        <input type="radio" id="shellfish" name="shellfish" value="yes" <%= allergies.shellfish? 'checked' : '' %>>
+        <label for="shellfish">yes</label>
+        <input type="radio" id="shellfish" name="shellfish" value="false">
+        <label for="shellfish">no</label><br>
+        <label for="treeNuts">Tree Nut free? </label>
+        <input type="radio" id="treeNuts" name="treeNuts" value="yes" <%= allergies.treeNuts? 'checked' : '' %>>
+        <label for="treeNuts">yes</label>
+        <input type="radio" id="treeNuts" name="treeNuts" value="false">
+        <label for="treeNuts">no</label><br>
+        <label for="peanuts">Peanut free? </label>
+        <input type="radio" id="peanuts" name="peanuts" value="yes" <%= allergies.peanuts? 'checked' : '' %>>
+        <label for="peanuts">yes</label>
+        <input type="radio" id="peanuts" name="peanuts" value="false">
+        <label for="peanuts">no</label><br>
+        <label for="soybeans">Soy free? </label>
+        <input type="radio" id="soybeans" name="soybeans" value="yes" <%= allergies.soybeans? 'checked' : '' %>>
+        <label for="soybeans">yes</label>
+        <input type="radio" id="soybeans" name="soybeans" value="false">
+        <label for="soybeans">no</label><br>
 
-        <input class="form-check-input" type="checkbox" id="defaultCheck2" name="dairy" value="true"
-            <%= allergies.dairy? 'checked' : '' %>>
-        <label class="form-check-label" for="defaultCheck2">Dairy</label><br>
-        <input class="form-check-input" type="checkbox" id="defaultCheck3" name="eggs" value="true"
-            <%= allergies.eggs? 'checked' : '' %>>
-        <label class="form-check-label" for="defaultCheck3">Eggs</label><br>
-        <input class="form-check-input" type="checkbox" id="defaultCheck4" name="finFish" value="true"
-            <%= allergies.finFish? 'checked' : '' %>>
-        <label class="form-check-label" for="defaultCheck4">Finned Fish</label><br>
-        <input class="form-check-input" type="checkbox" id="defaultCheck5" name="shellfish" value="true"
-            <%= allergies.shellfish? 'checked' : '' %>>
-        <label class="form-check-label" for="defaultCheck5">Shellfish</label><br>
-        <input class="form-check-input" type="checkbox" id="defaultCheck6" name="treeNuts" value="true"
-            <%= allergies.treeNuts? 'checked' : '' %>>
-        <label class="form-check-label" for="defaultCheck6">Tree Nuts</label><br>
-        <input class="form-check-input" type="checkbox" id="defaultCheck7" name="peanuts" value="true"
-            <%= allergies.peanuts? 'checked' : '' %>>
-        <label class="form-check-label" for="defaultCheck7">Peanuts</label><br>
-        <input class="form-check-input" type="checkbox" id="defaultCheck8" name="soybeans" value="true"
-            <%= allergies.soybeans? 'checked' : '' %>>
-        <label class="form-check-label" for="defaultCheck8">Soy</label><br>
     </div>
     <button type="submit" class="btn btn-warning"><%= user.allergies? "Update":"Add New"%></button>
 </form>

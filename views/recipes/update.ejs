@@ -1,17 +1,72 @@
 <%- include('../partials/header') %>
 
-<p>hello it's updatin' time</p>
-<%= recipe%>
-<%= user%>
+<div class="">
+    <img id="recipeImage" class="recipeImage profile-padding" src="<%=recipe.imageUrl%>" alt="recipe image">
+    <h1 class="profile-padding-no-top"><%=recipe.name%></h1>
+</div>
 
-<button>UPDATE PLS</button>
+<form class="profile-padding" action="/recipes/<%= recipe._id %>?_method=PUT" method="POST">
+    <div class="form-group">
+        <label for="name">Recipe Name</label>
+        <input type="text" class="form-control" name="name" aria-describedby="recipeName" value="<%=recipe.name%>">
 
-<p>thanks for saving <%= recipe.name %></p>
+        <label for="imageUrl">Image URL</label>
+        <input type="text" class="form-control" name="imageUrl" aria-describedby="imageUrl"
+            value="<%=recipe.imageUrl%>">
 
-<p>add update allergy button here</p>
+        <label for="recipeUrl">Recipe URL</label>
+        <input type="text" class="form-control" name="recipeUrl" aria-describedby="recipeUrl"
+            value="<%=recipe.recipeUrl%>">
 
-<h1><%=recipe.name%></h1>
-<h2><%=recipe.blogName%></h2>
-<img class="recipeImage" src="<%=recipe.imageUrl%>" alt="recipe image">
+        <label for="blogName">Blog Name</label>
+        <input type="text" class="form-control" name="blogName" aria-describedby="blogName"
+            value="<%=recipe.blogName%>">
+    </div>
+    <div class="form-check">
+        <label for="gluten">Gluten free? </label>
+        <input type="radio" id="gluten" name="gluten" value="yes" <%= allergies.gluten? 'checked' : '' %>>
+        <label for="gluten">yes</label>
+        <input type="radio" id="gluten" name="gluten" value="false">
+        <label for="gluten">no</label><br>
+        <label for="dairy">Dairy free? </label>
+        <input type="radio" id="dairy" name="dairy" value="yes" <%= allergies.dairy? 'checked' : '' %>>
+        <label for="dairy">yes</label>
+        <input type="radio" id="dairy" name="dairy" value="false">
+        <label for="dairy">no</label><br>
+        <label for="eggs">Egg free? </label>
+        <input type="radio" id="eggs" name="eggs" value="yes" <%= allergies.eggs? 'checked' : '' %>>
+        <label for="eggs">yes</label>
+        <input type="radio" id="eggs" name="eggs" value="false">
+        <label for="eggs">no</label><br>
+        <label for="finFish">Fin Fish free? </label>
+        <input type="radio" id="finFish" name="finFish" value="yes" <%= allergies.finFish? 'checked' : '' %>>
+        <label for="finFish">yes</label>
+        <input type="radio" id="finFish" name="finFish" value="false">
+        <label for="finFish">no</label><br>
+        <label for="shellfish">Shellfish free? </label>
+        <input type="radio" id="shellfish" name="shellfish" value="yes" <%= allergies.shellfish? 'checked' : '' %>>
+        <label for="shellfish">yes</label>
+        <input type="radio" id="shellfish" name="shellfish" value="false">
+        <label for="shellfish">no</label><br>
+        <label for="treeNuts">Tree Nut free? </label>
+        <input type="radio" id="treeNuts" name="treeNuts" value="yes" <%= allergies.treeNuts? 'checked' : '' %>>
+        <label for="treeNuts">yes</label>
+        <input type="radio" id="treeNuts" name="treeNuts" value="false">
+        <label for="treeNuts">no</label><br>
+        <label for="peanuts">Peanut free? </label>
+        <input type="radio" id="peanuts" name="peanuts" value="yes" <%= allergies.peanuts? 'checked' : '' %>>
+        <label for="peanuts">yes</label>
+        <input type="radio" id="peanuts" name="peanuts" value="false">
+        <label for="peanuts">no</label><br>
+        <label for="soybeans">Soy free? </label>
+        <input type="radio" id="soybeans" name="soybeans" value="yes" <%= allergies.soybeans? 'checked' : '' %>>
+        <label for="soybeans">yes</label>
+        <input type="radio" id="soybeans" name="soybeans" value="false">
+        <label for="soybeans">no</label><br>
+    </div>
+    <button type="Update" class="btn btn-info">Submit</button>
+</form>
+
+
 
 <%- include('../partials/footer') %>

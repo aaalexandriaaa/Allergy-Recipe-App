@@ -57,3 +57,17 @@
 #addEditAllergies {
   color: black;
 }
+
+.recipeImage {
+  max-width: 400px;
+  border-radius: 0%;
+}
+
+button {
+  margin: 5px;
+
+}
+
+a {
+  margin: 5px;
+}

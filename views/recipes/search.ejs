@@ -1,7 +1,7 @@
 <%- include('../partials/header') %>
-<h3>Search for a recipe that's free of the following allergens:</h3>
+<h3 class="profile-padding">Search for a recipe that's free of the following allergens:</h3>
 <form action="/recipes/search" method="POST">
-    <div class="form-check">
+    <div class="form-check profile-padding">
         <!-- PASS IN ALLERGY INFORMATION & USE TERNARY FOR THE CHECKED BOXES -->
         <input class="form-check-input" type="checkbox" id="defaultCheck1" name="gluten" value="true">
 
@@ -21,7 +21,7 @@
         <input class="form-check-input" type="checkbox" id="defaultCheck8" name="soybeans" value="true">
         <label class="form-check-label" for="defaultCheck8">Soy Free</label><br>
     </div>
-    <button type="submit" class="btn btn-info">Submit</button>
+    <button type="submit" class="btn btn-info profile-padding">Submit</button>
 </form>
 
 <div class='wrapper'>

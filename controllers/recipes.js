@@ -79,16 +79,18 @@ function show(req, res) {
     console.log(req.params.id)
     Recipe.findById(req.params.id)
         .then((recipe) => {
-            User.findById(recipe.user)
-                .then((user) => {
-                    res.render('recipes/update', {
-                        title: recipe.name,
-                        user,
-                        recipe
-
-                    })
+            Allergy.findById(recipe.allergies)
+                .then((allergies) => {
+                    User.findById(recipe.user)
+                        .then((user) => {
+                            res.render('recipes/update', {
+                                title: recipe.name,
+                                user,
+                                recipe,
+                                allergies
+                            })
+                        })
                 })
-
         })
 }
 
@@ -103,5 +105,13 @@ function removeRecipe(req, res) {
 }
 
 function update(req, res) {
-    console.log("UPDATIN")
+    console.log("Body:", req.body)
+    Recipe.findByIdAndUpdate(req.params.id, req.body)
+        .then((recipe) => {
+            Allergy.findByIdAndUpdate(recipe.allergies, req.body)
+                .then(() => {
+                    res.redirect(`/recipes/${req.params.id}/update`)
+                })
+        })
+
 }

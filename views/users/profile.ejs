@@ -39,8 +39,8 @@
     <% } %>
 </div>
 <div>
-    <section class="profile-padding">
-        <a href="/users/allergies/new" class="badge badge-info profile-padding-no-top"
+    <section>
+        <a href="/users/allergies/new" class="badge badge-info profile-padding"
             style="font-size:larger"><%-user.allergies?'Edit Allergies': 'Add Allergies'%></a>
     </section>
 </div>
@@ -100,7 +100,7 @@
 
             </p>
 
-            <a href="/recipes/<%=r._id%>/update" class="btn btn-primary" target="_blank">Edit
+            <a href="/recipes/<%=r._id%>/update" class="btn btn-primary">Edit
                 this Recipe</a>
 
             <a href="<%=r.recipeUrl%>" class="btn btn-primary" target="_blank">View this recipe at <%=r.blogName%> </a>

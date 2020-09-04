@@ -40,17 +40,16 @@ function create(req, res) {
 function update(req, res) {
     User.findById(req.user._id)
         .then((user) => {
-            Allergy.findById(user.allergies)
+            // Allergy.findById(user.allergies)
+            //     .then((allergy) => {
+            Allergy.findByIdAndUpdate(user.allergies, req.body, {
+                    new: true
+                })
                 .then((allergy) => {
-                    req.body = !!req.body
-                    Allergy.findByIdAndUpdate(user.allergies, req.body, {
-                            new: true
-                        })
-                        .then((allergy) => {
-                            res.redirect('/users/profile')
-                        })
+                    res.redirect('/users/profile')
                 })
         })
+    //})
 }
 
 
